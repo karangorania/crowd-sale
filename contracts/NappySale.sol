@@ -21,6 +21,9 @@ contract MappyTokenSale is Crowdsale {
         uint256 seedSaleQty = 50000000 * 10 ** 9;
         uint256 publicSaleQty = 20000000 * 10 ** 9;
 
+        uint256 currentStage;
+        uint256 deno = 10 ** 6;
+
         // Token Price 
         uint256 public preSalePrice = 22666;
         uint256 public seedSalePrice = 13600;
@@ -28,36 +31,42 @@ contract MappyTokenSale is Crowdsale {
 
    
 
-    function _getTokenAmount(uint256 weiAmount) internal view override returns (uint256) {
-        uint256 tokenRate;
-        if(weiAmount <= preSaleQty) {
-            tokenRate = preSalePrice;
-        } else if (weiAmount <= seedSaleQty) {
-            tokenRate = seedSalePrice;
-        } else if (weiAmount <= publicSaleQty) {
-            tokenRate = publicSalePrice;
-        } else {
-            revert('Not enough tokens left');
-        }
-        return (weiAmount.mul(tokenRate)).div(10**9);
+    function calculateRate() internal view returns(uint256){
+        if (currentStage == 0) {
+            return preSalePrice;
+        } 
+        else if (currentStage == 1) {
+            return seedSalePrice;
+        } 
+        else if (currentStage == 2) {
+            return publicSalePrice;
+        } 
+    } 
+
+    function _getTokenAmount(uint256 weiAmount) internal override view returns (uint256) {
+        return (weiAmount.mul(calculateRate())).div(deno);
     }
 
-    function buyToken(uint256) public payable {
-        buyTokens(msg.sender);
-    }
+    function _processPurchase(address , uint256 tokenAmount) internal override {
+        if (currentStage == 0) {
+            preSaleQty = preSaleQty.sub(tokenAmount);
 
-     function _processPurchase() internal {
-        uint256 stage;
-        if(stage == preSaleQty) {
-            preSaleQty--;
+                if (preSaleQty == 0 ) {
+                    currentStage = 1;
+                }
+        } 
+        else if (currentStage == 1) {
+            seedSaleQty = seedSaleQty.sub(tokenAmount);
+
+                if (seedSaleQty == 0 ) {
+                currentStage = 2;
+                }
+
         }
-        else if (stage == seedSaleQty) {
-            seedSaleQty--;
-        } else if (stage == publicSaleQty) {
-            publicSaleQty--;
-        } else {
-            revert('Kya kar raha hai');
-        }
+         else if (currentStage == 2) {
+            publicSaleQty = publicSaleQty.sub(tokenAmount);
+        } 
+         
     }
 
 }
