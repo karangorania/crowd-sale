@@ -6,11 +6,11 @@ import './Nappy.sol';
 import './CrowdSale.sol';
 // import "@openzeppelin-contracts/contracts/crowdsale/Crowdsale.sol";
 
-contract MappyTokenSale is Crowdsale {
+contract NappyTokenSale is Crowdsale {
     constructor(
         uint256 rate, 
         address payable wallet, 
-        // MappyTokenSale token
+        // NappyTokenSale token
         IERC20 token
         ) 
         Crowdsale (rate, wallet, token)public {
