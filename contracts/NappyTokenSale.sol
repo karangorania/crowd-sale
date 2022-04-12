@@ -2,7 +2,8 @@
 
 pragma solidity ^0.6.0;
 
-import './Nappy.sol';
+// import './Nappy.sol';
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
 import './CrowdSale.sol';
 // import "@openzeppelin-contracts/contracts/crowdsale/Crowdsale.sol";
 
