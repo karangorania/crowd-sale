@@ -1,15 +1,84 @@
-# Basic Sample Hardhat Project
+# Crowd-Sale-Smart-Contract
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Crowd-Sale Smart Contract which three sale round.
 
-Try running some of the following tasks:
+- Presale Round
+- Seedsale Round
+- Publicsale Round
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+## Important Step
+
+```bash
+create .env file in root directory.
+```
+
+```bash
+    API_URL = "https://eth-ropsten.alchemyapi.io/v2/your-api-key"
+    PRIVATE_KEY = "your-metamask-private-key"
+```
+
+-Get Your API Key
+
+- [Alchemy](https://alchemy.com/?r=36af7883c4699196)
+  -Get Your Ropsten Faucet
+
+- [Ropsten Faucet](https://github.com/matiassingers/awesome-readme)
+
+## NPM Packages
+
+## Tech Stack
+
+- [Node](https://nodejs.org/en/)
+- [Hardhat](https://hardhat.org/)
+- [Solidity](https://docs.soliditylang.org/)
+- [Openzepplin](https://openzeppelin.com/)
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd crowd-sale
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Compile
+
+```bash
+  npx hardhat compile
+```
+
+Test
+
+```bash
+  npx hardhat test
+```
+
+Deploy
+
+```bash
+  node scripts/deploy.js
+```
+
+Deploy on Ropsten
+
+```bash
+  npx hardhat run scripts/deploy.js --network ropsten
+```
+
+Help
+
+```bash
+  npx hardhat help
 ```
