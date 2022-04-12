@@ -31,14 +31,14 @@ create .env file in root directory.
 - [Node](https://nodejs.org/en/)
 - [Hardhat](https://hardhat.org/)
 - [Solidity](https://docs.soliditylang.org/)
-- [Openzepplin](https://openzeppelin.com/)
+- [Openzeppelin](https://openzeppelin.com/)
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/karangorania/crowd-sale/tree/development
 ```
 
 Go to the project directory
