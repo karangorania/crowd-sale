@@ -48,7 +48,7 @@ contract NappyTokenSale is Crowdsale {
         return (weiAmount.mul(calculateRate())).div(deno);
     }
 
-    function _processPurchase(address , uint256 tokenAmount) internal override {
+    function _processPurchase(address beneficiary, uint256 tokenAmount) internal override {
         if (currentStage == 0) {
             preSaleQty = preSaleQty.sub(tokenAmount);
 
@@ -67,6 +67,8 @@ contract NappyTokenSale is Crowdsale {
          else if (currentStage == 2) {
             publicSaleQty = publicSaleQty.sub(tokenAmount);
         } 
+
+         super._processPurchase(beneficiary,tokenAmount);
          
     }
 
