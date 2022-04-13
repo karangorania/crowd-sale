@@ -26,6 +26,13 @@ create .env file in root directory.
 
 ## NPM Packages
 
+- [Openzeppelin](https://www.npmjs.com/package/@openzeppelin/contracts)
+- [Hardhat-Ethers](https://www.npmjs.com/package/hardhat-ethers)
+- [Chai](https://www.npmjs.com/package/chai)
+- [Ethers](https://www.npmjs.com/package/ethers)
+- [Ethereum-Waffle](https://www.npmjs.com/package/ethereum-waffle)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+
 ## Tech Stack
 
 - [Node](https://nodejs.org/en/)
