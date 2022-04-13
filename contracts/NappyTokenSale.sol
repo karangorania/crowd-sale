@@ -23,7 +23,7 @@ contract NappyTokenSale is Crowdsale {
         uint256 publicSaleQty = 20000000 * 10 ** 9;
 
         uint256 currentStage;
-        uint256 deno = 10 ** 6;
+        uint256 deno = 10 ** 9;
 
         // Token Price 
         uint256 public preSalePrice = 22666;
