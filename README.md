@@ -20,7 +20,7 @@ create .env file in root directory.
 -Get Your API Key
 
 - [Alchemy](https://alchemy.com/?r=36af7883c4699196)
-  -Get Your Ropsten Faucet
+- Get Your Ropsten Faucet
 
 - [Ropsten Faucet](https://github.com/matiassingers/awesome-readme)
 
